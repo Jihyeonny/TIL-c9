@@ -50,4 +50,29 @@ class User(db.Model):
 # user = User.query.get(2)
 # primary key만 get으로 가져올 수 있음.
 
+# SELECT * FROM users WHERE email LIKE '%hen%';
 # users = User.query.filter(User.email.like("%hen%")).all()
+
+# ORDER
+# users = User.query.order_by(User.username).all()
+
+# LIMIT
+# users = User.query.limit(1).all()
+
+# OFFSET
+# users = User.query.offset(2).all()
+
+# ORDER + LIMIT + OFFSET
+# users =User.query.order_by(User.username).limit(1).offset(2).all()
+
+# [DELETE]
+# DELETE FROM users WHERE id =1;
+# user = USER.query.get(1)
+# db.session.delete(user)
+# db.session.commit()
+
+# [UPDATE]
+# UPDATE users SET username = 'jihyeonny' WHERE id=2;
+# user.username = 'jihyeonny'
+# db.session.commit()
+
