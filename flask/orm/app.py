@@ -65,7 +65,6 @@ class User(db.Model):
 # ORDER + LIMIT + OFFSET
 # users =User.query.order_by(User.username).limit(1).offset(2).all()
 
-# [DELETE]
 # DELETE FROM users WHERE id =1;
 # user = USER.query.get(1)
 # db.session.delete(user)
