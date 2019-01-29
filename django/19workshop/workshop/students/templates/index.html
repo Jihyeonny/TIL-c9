@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/posts/create/" method="post">
-        {% csrf_token %}
-        <input type="text" name="title"/>
-        <input type="text" name="content"/>
-        <input type="submit" value="Submit"/>
-    </form>
+    <h1>Student Index</h1>
+    <a href="/students/new/">New</a>
+    <ul>
+    {% for student in students %}
+        <li><a href="/students/{{student.pk}}">{{student.name}}</a></li>
+    {% endfor %}
+    </ul>
 </body>
 </html>
