@@ -75,7 +75,7 @@ def edit(request,post_id):
 #     post.content = request.POST.get('content')
 #     post.save()
     
-    return redirect('posts:detail', post.pk)
+# return redirect('posts:detail', post.pk)
     
 def comments_create(request, post_id):
     #댓글을 달 게시물
