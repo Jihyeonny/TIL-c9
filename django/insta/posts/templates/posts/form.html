@@ -11,6 +11,7 @@
 <form action="" method="post" enctype="multipart/form-data">
     {%csrf_token%}
     {%bootstrap_form post_form%}
+    {{ image_formset.as_p }} <!--p태그로 감싼다-->
     {% buttons %}
         <button type="submit" class="btn btn-primary">Submit</button>
     {% endbuttons %}
