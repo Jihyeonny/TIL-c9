@@ -1,6 +1,9 @@
 
 <div class="card" style="width: 18rem;">
   <div class="card-header">
+    {% if post.user.profile.image %}
+    <img scr="{{ post.user.profile.image.url }}" width="25" alt="">
+    {% endif %}
     <a href="{% url 'people' post.user.username %}">{{ post.user.username }}</a>
   </div>
   
