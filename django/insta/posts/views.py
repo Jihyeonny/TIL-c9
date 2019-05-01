@@ -5,6 +5,7 @@ from django.views.decorators.http import require_POST,require_http_methods
 from .models import Post,Comment
 from django.db import transaction
 from itertools import chain
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -106,8 +107,11 @@ def like(request, post_id):
     if request.user in post.like_users.all():
         # 2. 좋아요 취소
         post.like_users.remove(request.user)
+        liked = False
     else:
         # 1. 좋아요!
         post.like_users.add(request.user)
+        liked = True
    
-    return redirect('posts:list')
+    # return redirect('posts:list')
+    return JsonResponse({'liked': liked, 'count': post.like_users.count()})
